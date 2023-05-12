@@ -1,4 +1,4 @@
-package com.ryder.airline_fullstack;
+package com.ryder.airline_fullstack.models;
 
 import jakarta.persistence.*;
 
@@ -33,6 +33,8 @@ public class Customer {
 
     @Column
     private String homeAddress;
+
+    //need the many to many relationship with flights
 
     public Customer() {
     }
