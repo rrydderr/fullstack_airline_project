@@ -40,12 +40,13 @@ public class Flight {
 
     //need to include the many to many relationship with customers
 
+    //many to one relationship eith package holiday
+
 
     public Flight() {
     }
 
-    public Flight(Long id, String airline, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
-        this.id = id;
+    public Flight(String airline, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
         this.airline = airline;
         this.price = price;
         this.flightDuration = flightDuration;

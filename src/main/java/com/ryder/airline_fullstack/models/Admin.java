@@ -26,8 +26,7 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(Long id, String fullName, String emailAddress, String password, String adminPin) {
-        this.id = id;
+    public Admin(String fullName, String emailAddress, String password, String adminPin) {
         this.fullName = fullName;
         this.emailAddress = emailAddress;
         this.password = password;

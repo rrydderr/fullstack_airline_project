@@ -39,8 +39,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String fullName, String email, String password, String passportNumber, LocalDate dateOfBirth, String phoneNumber, String homeAddress) {
-        this.id = id;
+    public Customer(String fullName, String email, String password, String passportNumber, LocalDate dateOfBirth, String phoneNumber, String homeAddress) {
         this.fullName = fullName;
         this.email = email;
         this.password = password;
