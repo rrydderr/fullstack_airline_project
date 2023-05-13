@@ -2,7 +2,10 @@ package com.ryder.airline_fullstack.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name= "flights")
@@ -16,6 +19,12 @@ public class Flight {
 
     @Column
     private String airline;
+
+    @Column
+    private LocalDate dateOfFlight;
+
+    @Column
+    private LocalTime timeOfFlight;
 
     @Column
     private Double price;
@@ -35,10 +44,10 @@ public class Flight {
     @Enumerated
     private FlightStatus flightStatus;
 
+    @ManyToMany(mappedBy = "flights")
+    private List<Customer>customers;
 
-    //need to include enum
 
-    //need to include the many to many relationship with customers
 
     //many to one relationship eith package holiday
 
@@ -46,8 +55,10 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(String airline, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
+    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
         this.airline = airline;
+        this.dateOfFlight = dateOfFlight;
+        this.timeOfFlight = timeOfFlight;
         this.price = price;
         this.flightDuration = flightDuration;
         this.destination = destination;
@@ -71,6 +82,22 @@ public class Flight {
 
     public void setAirline(String airline) {
         this.airline = airline;
+    }
+
+    public LocalDate getDateOfFlight() {
+        return dateOfFlight;
+    }
+
+    public void setDateOfFlight(LocalDate dateOfFlight) {
+        this.dateOfFlight = dateOfFlight;
+    }
+
+    public LocalTime getTimeOfFlight() {
+        return timeOfFlight;
+    }
+
+    public void setTimeOfFlight(LocalTime timeOfFlight) {
+        this.timeOfFlight = timeOfFlight;
     }
 
     public Double getPrice() {

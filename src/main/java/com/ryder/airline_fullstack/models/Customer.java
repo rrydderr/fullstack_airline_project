@@ -3,6 +3,7 @@ package com.ryder.airline_fullstack.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name= "customers")
@@ -34,7 +35,12 @@ public class Customer {
     @Column
     private String homeAddress;
 
-    //need the many to many relationship with flights
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "customer_flights",
+        joinColumns = @JoinColumn(name = "customer_id"),
+    inverseJoinColumns = @JoinColumn(name= "flight_id"))
+    private List<Flight> flights;
+
 
     public Customer() {
     }
