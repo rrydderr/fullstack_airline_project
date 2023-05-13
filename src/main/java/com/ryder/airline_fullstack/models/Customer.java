@@ -41,6 +41,12 @@ public class Customer {
     inverseJoinColumns = @JoinColumn(name= "flight_id"))
     private List<Flight> flights;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "customer_package_holidays",
+        joinColumns = @JoinColumn(name = "customer_id"),
+    inverseJoinColumns = @JoinColumn(name = "package_holiday_id"))
+    private List<PackageHoliday> packageHolidays;
+
 
     public Customer() {
     }

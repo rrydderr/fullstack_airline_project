@@ -1,6 +1,9 @@
 package com.ryder.airline_fullstack.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "package_holidays")
@@ -32,8 +35,13 @@ public abstract class PackageHoliday {
     @Enumerated
     private AccommodationType accommodationType;
 
-    //need to include one to many relationship with flight
+    @OneToMany(mappedBy = "packageHoliday", orphanRemoval = true)
+    //here the packageHoliday corresponds to the property name given in Flight class
+    @JsonIgnoreProperties("packageHoliday")
+    private List<Flight>flights;
 
+    @ManyToMany (mappedBy = "packageHolidays")
+    private List<Customer>customers;
 
     public PackageHoliday() {
     }

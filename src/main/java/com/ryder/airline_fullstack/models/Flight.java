@@ -1,5 +1,6 @@
 package com.ryder.airline_fullstack.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -47,15 +48,16 @@ public class Flight {
     @ManyToMany(mappedBy = "flights")
     private List<Customer>customers;
 
-
-
-    //many to one relationship eith package holiday
+    @ManyToOne
+    @JoinColumn(name = "package_holiday_id", nullable = false) //check
+    @JsonIgnoreProperties("flights") //check
+    private PackageHoliday packageHoliday;
 
 
     public Flight() {
     }
 
-    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
+    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus, PackageHoliday packageHoliday) {
         this.airline = airline;
         this.dateOfFlight = dateOfFlight;
         this.timeOfFlight = timeOfFlight;
@@ -65,6 +67,7 @@ public class Flight {
         this.availableSeats = availableSeats;
         this.totalSeats = totalSeats;
         this.flightStatus = flightStatus;
+        this.packageHoliday = packageHoliday;
     }
 
 
@@ -146,5 +149,21 @@ public class Flight {
 
     public void setFlightStatus(FlightStatus flightStatus) {
         this.flightStatus = flightStatus;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public PackageHoliday getPackageHoliday() {
+        return packageHoliday;
+    }
+
+    public void setPackageHoliday(PackageHoliday packageHoliday) {
+        this.packageHoliday = packageHoliday;
     }
 }
