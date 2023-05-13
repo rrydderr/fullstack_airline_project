@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name= "package_holidays")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "package_type")
-public abstract class PackageHoliday {
+public class PackageHoliday {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +45,9 @@ public abstract class PackageHoliday {
 
     @ManyToMany (mappedBy = "packageHolidays")
     private List<Customer>customers;
+
+    @ManyToMany (mappedBy = "packageHolidays")
+    private List<Admin>admins;
 
     public PackageHoliday() {
     }
@@ -112,6 +115,38 @@ public abstract class PackageHoliday {
 
     public void setAccommodationType(AccommodationType accommodationType) {
         this.accommodationType = accommodationType;
+    }
+
+    public PackageHolidayType getPackageHolidayType() {
+        return packageHolidayType;
+    }
+
+    public void setPackageHolidayType(PackageHolidayType packageHolidayType) {
+        this.packageHolidayType = packageHolidayType;
+    }
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public List<Admin> getAdmins() {
+        return admins;
+    }
+
+    public void setAdmins(List<Admin> admins) {
+        this.admins = admins;
     }
 }
 

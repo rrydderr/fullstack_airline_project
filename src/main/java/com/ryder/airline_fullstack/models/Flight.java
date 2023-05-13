@@ -48,6 +48,9 @@ public class Flight {
     @ManyToMany(mappedBy = "flights")
     private List<Customer>customers;
 
+    @ManyToMany(mappedBy = "flights")
+    private List<Admin>admins;
+
     @ManyToOne
     @JoinColumn(name = "package_holiday_id", nullable = false) //check
     @JsonIgnoreProperties("flights") //check
@@ -158,6 +161,14 @@ public class Flight {
 
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
+    }
+
+    public List<Admin> getAdmins() {
+        return admins;
+    }
+
+    public void setAdmins(List<Admin> admins) {
+        this.admins = admins;
     }
 
     public PackageHoliday getPackageHoliday() {

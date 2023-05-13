@@ -2,6 +2,8 @@ package com.ryder.airline_fullstack.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "admins")
 public class Admin {
@@ -22,6 +24,18 @@ public class Admin {
 
     @Column
     private String adminPin;
+
+    @ManyToMany
+    @JoinTable(name="admins_flights",
+    joinColumns = @JoinColumn(name="admin_id"),
+    inverseJoinColumns = @JoinColumn(name = "flight_id"))
+    private List<Flight>flights;
+
+    @ManyToMany
+    @JoinTable(name = "admins_package_holidays",
+    joinColumns = @JoinColumn(name="admin_id"),
+    inverseJoinColumns = @JoinColumn(name = "package_holiday_id"))
+    private List<PackageHoliday> packageHolidays;
 
     public Admin() {
     }
@@ -71,5 +85,13 @@ public class Admin {
 
     public void setAdminPin(String adminPin) {
         this.adminPin = adminPin;
+    }
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
     }
 }
