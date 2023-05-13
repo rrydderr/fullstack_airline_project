@@ -35,6 +35,9 @@ public abstract class PackageHoliday {
     @Enumerated
     private AccommodationType accommodationType;
 
+    @Enumerated(EnumType.STRING)
+    private PackageHolidayType packageHolidayType;
+
     @OneToMany(mappedBy = "packageHoliday", orphanRemoval = true)
     //here the packageHoliday corresponds to the property name given in Flight class
     @JsonIgnoreProperties("packageHoliday")

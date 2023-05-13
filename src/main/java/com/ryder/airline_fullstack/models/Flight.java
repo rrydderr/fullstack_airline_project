@@ -52,6 +52,7 @@ public class Flight {
     @JoinColumn(name = "package_holiday_id", nullable = false) //check
     @JsonIgnoreProperties("flights") //check
     private PackageHoliday packageHoliday;
+    //if a flight does not have a package holiday attached then we can set it to null
 
 
     public Flight() {

@@ -8,5 +8,6 @@ public enum AccommodationType {
     Lodge,
     Apartment,
     Villa,
-    Cottage
+    Cottage,
+    Cabin
 }
