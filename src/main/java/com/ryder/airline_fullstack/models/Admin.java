@@ -46,7 +46,6 @@ public class Admin {
         this.password = password;
         this.adminPin = adminPin;
     }
-
     public Long getId() {
         return id;
     }
