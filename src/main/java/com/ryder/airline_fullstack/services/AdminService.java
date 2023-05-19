@@ -29,7 +29,7 @@ public class AdminService {
 //    admin object exists with the given id.
 //    ((returns admin object or null if no object is found))
 
-    
+
     //update admin (by id)
     public Admin updateAdmin(Admin admin) {
         Optional<Admin> existingAdmin = adminRepository.findById(admin.getId());
