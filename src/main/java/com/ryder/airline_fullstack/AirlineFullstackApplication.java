@@ -1,4 +1,4 @@
-package com.ryder.airline_fullstack.models;
+package com.ryder.airline_fullstack;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
