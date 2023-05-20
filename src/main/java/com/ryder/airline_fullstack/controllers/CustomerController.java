@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@ResponseBody
+@RestController
 @RequestMapping("/customers")
 public class CustomerController {
     @Autowired
@@ -45,7 +45,7 @@ public class CustomerController {
         customer.setId(id);
         Customer updatedCustomer = customerService.updateCustomer(customer);
         if (updatedCustomer == null){
-            return new ResponseEntity<Customer>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
     }

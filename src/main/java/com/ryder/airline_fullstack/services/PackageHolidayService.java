@@ -40,7 +40,7 @@ public class PackageHolidayService {
     }
 
     //delete package holiday
-    public void PackageHoliday(long id){
+    public void deletePackageHoliday (long id){
         packageHolidayRepository.deleteById(id);
     }
 }
