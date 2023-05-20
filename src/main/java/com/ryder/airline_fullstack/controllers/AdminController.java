@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("admins")
+@RequestMapping("/admins")
 public class AdminController {
     @Autowired
     private AdminService adminService;
@@ -33,7 +33,7 @@ public class AdminController {
     }
 
     //update admin
-    @PutMapping(value = "/{id")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Admin> updateAdmin(@PathVariable long id, @RequestBody Admin admin){
         admin.setId(id);
         Admin updatedAdmin = adminService.updateAdmin(admin);
