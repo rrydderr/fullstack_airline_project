@@ -1,7 +1,6 @@
 package com.ryder.airline_fullstack.components;
 
-import com.ryder.airline_fullstack.models.Admin;
-import com.ryder.airline_fullstack.models.Customer;
+import com.ryder.airline_fullstack.models.*;
 import com.ryder.airline_fullstack.repositories.AdminRepository;
 import com.ryder.airline_fullstack.repositories.CustomerRepository;
 import com.ryder.airline_fullstack.repositories.FlightRepository;
@@ -12,6 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -49,7 +49,9 @@ public class DataLoader implements ApplicationRunner {
     Customer customer7 = new Customer("Pearl Krabs", "pearlykrabs@gmail.com", "notawhale", "4295746", LocalDate.of(1990, 5, 12), "655-672-3307", "3451 Anchor Way, Bikini Bottom");
     Customer customer8 = new Customer("Penelope Puff", "penelopepuff@gmail.com", "puffboatingschool123", "8767548", LocalDate.of(1958, 1, 12), "335-623-9055", "Mrs.Puffs House, Bikini Bottom");
 
+    //Flights
 
+//    Flight flight = new Flight("Ryzair", LocalDate.of(2023, 6, 7), LocalTime.of(12, 30), 198.99, 190, "British Colombia, Canada", 23, 250, FlightStatus.UNKNOWN,);
 
 
 

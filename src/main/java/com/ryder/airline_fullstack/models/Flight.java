@@ -51,12 +51,9 @@ public class Flight {
     @ManyToMany(mappedBy = "flights")
     private List<Admin>admins;
 
-    @ManyToOne
-    @JoinColumn(name = "package_holiday_id", nullable = false) //check
-    @JsonIgnoreProperties("flights") //check
-    private PackageHoliday packageHoliday;
-    //if a flight does not have a package holiday attached then we can set it to null
-
+    @OneToMany(mappedBy = "flights", orphanRemoval = true)
+    @JsonIgnoreProperties("flights")
+    private List<PackageHoliday> packageHolidays;
 
     public Flight() {
     }
@@ -71,7 +68,6 @@ public class Flight {
         this.availableSeats = availableSeats;
         this.totalSeats = totalSeats;
         this.flightStatus = flightStatus;
-        this.packageHoliday = packageHoliday;
     }
 
 
@@ -171,11 +167,11 @@ public class Flight {
         this.admins = admins;
     }
 
-    public PackageHoliday getPackageHoliday() {
-        return packageHoliday;
+    public List<PackageHoliday> getPackageHoliday() {
+        return packageHolidays;
     }
 
-    public void setPackageHoliday(PackageHoliday packageHoliday) {
-        this.packageHoliday = packageHoliday;
+    public void setPackageHoliday(List<PackageHoliday> packageHoliday) {
+        this.packageHolidays = packageHoliday;
     }
 }

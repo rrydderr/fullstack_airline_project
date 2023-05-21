@@ -38,10 +38,11 @@ public class PackageHoliday {
     @Enumerated(EnumType.STRING)
     private PackageHolidayType packageHolidayType;
 
-    @OneToMany(mappedBy = "packageHoliday", orphanRemoval = true)
-    //here the packageHoliday corresponds to the property name given in Flight class
-    @JsonIgnoreProperties("packageHoliday")
-    private List<Flight>flights;
+    @ManyToOne
+    @JoinColumn(name= "flight_id", nullable = false)
+    @JsonIgnoreProperties("packageHolidays")
+    private Flight flights;
+
 
     @ManyToMany (mappedBy = "packageHolidays")
     private List<Customer>customers;
@@ -52,13 +53,15 @@ public class PackageHoliday {
     public PackageHoliday() {
     }
 
-    public PackageHoliday(String packageName, Double price, String destination, String description, int duration, AccommodationType accommodationType) {
+    public PackageHoliday(String packageName, Double price, String destination, String description, int duration, AccommodationType accommodationType, Flight fLights) {
         this.packageName = packageName;
         this.price = price;
         this.destination = destination;
         this.description = description;
         this.duration = duration;
         this.accommodationType = accommodationType;
+        this.flights = fLights;
+
     }
 
     public Long getId() {
@@ -125,14 +128,6 @@ public class PackageHoliday {
         this.packageHolidayType = packageHolidayType;
     }
 
-    public List<Flight> getFlights() {
-        return flights;
-    }
-
-    public void setFlights(List<Flight> flights) {
-        this.flights = flights;
-    }
-
     public List<Customer> getCustomers() {
         return customers;
     }
@@ -147,6 +142,14 @@ public class PackageHoliday {
 
     public void setAdmins(List<Admin> admins) {
         this.admins = admins;
+    }
+
+    public Flight getFlights() {
+        return flights;
+    }
+
+    public void setFlights(Flight flights) {
+        this.flights = flights;
     }
 }
 
