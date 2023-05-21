@@ -40,14 +40,14 @@ public class DataLoader implements ApplicationRunner {
 
     //Customers
     Customer customer1 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer2 = new Customer("SpongeBob Squarepants", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer3 = new Customer("Patrick Star", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer4 = new Customer("Sandy Cheeks", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer5 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer6 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer7 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer8 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
-    Customer customer9 = new Customer("Ryder Zane", "ryderzrashid@gmail.com", "Password", "1098765", LocalDate.of(2001, 5, 1), "07891412226", "5 Buckingham Palace, London");
+    Customer customer2 = new Customer("SpongeBob Squarepants", "spongebobsquarepants@gmail.com", "KrabbyPattiesRule", "2566361", LocalDate.of(1986, 7, 14), "555-555-5555", "124 Conch Street, Bikini Bottom");
+    Customer customer3 = new Customer("Patrick Star", "patstar@gmail.com", "jellyfishing77", "4534568", LocalDate.of(1989, 11, 11), "555-555-5556", "120 Conch Street, Bikini Bottom");
+    Customer customer4 = new Customer("Sandra Jennifer Cheeks", "cheekssandy@gmail.com", "BushyTail", "8047367", LocalDate.of(1988, 11, 17), "557-786-9932", "Sandy's TreeDome, Bikini Bottom");
+    Customer customer5 = new Customer("Eugene Harold Krabs", "mrkrabs@gmail.com", "Moneymoneymoney", "1224364", LocalDate.of(1942, 11, 30), "334-441-8088", "3451 Anchor Way, Bikini Bottom");
+    Customer customer6 = new Customer("Squidward Quincy Tentacles", "squidqtentacles@gmail.com", "clarinetKing28", "6703645", LocalDate.of(1985, 10, 9), "07891412226", "122 Conch Street, Bikini Bottom");
+    Customer customer9 = new Customer("Gary Wilson Jr", "meow@gmail.com", "meowmeow", "2785475", LocalDate.of(1989, 11, 27), "555-555-5555", "124 Conch Street, Bikini Bottom");
+    Customer customer7 = new Customer("Pearl Krabs", "pearlykrabs@gmail.com", "notawhale", "4295746", LocalDate.of(1990, 5, 12), "655-672-3307", "3451 Anchor Way, Bikini Bottom");
+    Customer customer8 = new Customer("Penelope Puff", "penelopepuff@gmail.com", "puffboatingschool123", "8767548", LocalDate.of(1958, 1, 12), "335-623-9055", "Mrs.Puffs House, Bikini Bottom");
 
 
 
