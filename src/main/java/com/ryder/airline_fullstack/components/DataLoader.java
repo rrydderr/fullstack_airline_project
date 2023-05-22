@@ -64,29 +64,40 @@ public class DataLoader implements ApplicationRunner {
         Flight flight12 = new Flight("British Jets", LocalDate.of(2023, 5, 24), LocalTime.of(15, 49), 198.49, 169, "Madrid, Spain", 0, 250, FlightStatus.CANCELLED);
         Flight flight13 = new Flight("British Jets", LocalDate.of(2023, 5, 22), LocalTime.of(1, 37), 204.55, 172, "Brussels, Belgium", 0, 200, FlightStatus.BOARDING);
         Flight flight14 = new Flight("British Jets", LocalDate.of(2023, 6, 30), LocalTime.of(0, 8), 202.82, 153, "Rome, Italy", 8, 200, FlightStatus.UNKNOWN);
-        Flight flight15 = new Flight("British Jets", LocalDate.of(2023, 6, 29), LocalTime.of(23, 27), 93.70, 138, "Marseille, France", 11, 200, FlightStatus.UNKNOWN);
+        Flight flight15 = new Flight("British Jets", LocalDate.of(2023, 6, 29), LocalTime.of(23, 27), 93.70, 138, "Trysil, Norway", 11, 200, FlightStatus.UNKNOWN);
 
         //Package Holidays
-//    PackageHoliday packageHoliday = new PackageHoliday("Cultural Climb", 200.00, "Rome, Italy", "The heart of Cultural Exploration... ", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday1 = new PackageHoliday("Cultural Climb", PackageHolidayType.CITY_BREAK, 879.51, "Rome, Italy", "Embark on a timeless adventure in Rome! Immerse yourself in its ancient wonders like the Colosseum and Vatican City. Explore the charming streets of Trastevere, make a wish at Trevi Fountain, and savor mouthwatering Italian cuisine. With its rich history and captivating beauty, Rome promises an unforgettable journey. Book now and experience the eternal allure of th", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday2 = new PackageHoliday("City Break", PackageHolidayType.CITY_BREAK, 1597.29, "Toronto, Canada", "Embark on an unforgettable journey to Toronto! Immerse yourself in its vibrant culture, iconic landmarks like the CN Tower, and diverse culinary scene. Explore the charming Distillery District, relax at Toronto Islands, and indulge in world-class shopping. Discover the perfect blend of cosmopolitan charm and natural beauty in this captivating city. Book now and create lasting memories! ", 7, AccommodationType.Apartment, flight14);
+        PackageHoliday packageHoliday3 = new PackageHoliday("Countryside Escape", PackageHolidayType.COUNTRYSIDE, 1874.83, "British Colombia, Canada", "Embark on a breathtaking adventure in British Columbia! Immerse yourself in the stunning natural landscapes of Whistler, explore the charming streets of Victoria, and witness the awe-inspiring beauty of the Rocky Mountains. Discover the vibrant city life of Vancouver, indulge in outdoor activities like hiking and kayaking, and encounter diverse wildlife. With its awe-inspiring scenery and endless opportunities for adventure, British Columbia is a destination like no other. Book now and experience the magic of this Canadian gem!", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday4 = new PackageHoliday("'Tis The Ski-son'", PackageHolidayType.SKI, 2099.72, "Geneva, Switzerland", "Embark on an exhilarating ski trip to the breathtaking Alps! Immerse yourself in a winter wonderland of towering snow-capped peaks, pristine slopes, and charming alpine villages. Feel the adrenaline rush as you carve through powdery trails, surrounded by panoramic vistas. Whether you're a novice or an expert skier, the Alps offer a variety of slopes catering to all levels. Indulge in après-ski delights, savoring hearty mountain cuisine and warming up by crackling fires. Unforgettable memories await as you embrace the thrill of the slopes and the beauty of one of Europe's most iconic mountain ranges.", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday5 = new PackageHoliday("Under The Stars", PackageHolidayType.CAMPING, 650.94, "Brussels, Belgium", "Embark on a memorable camping adventure in the heart of Brussels! Escape the bustling city and discover the natural beauty that surrounds this vibrant metropolis. Set up your tent in a picturesque campsite, nestled amidst lush greenery and serene surroundings. Wake up to the sound of birdsong and enjoy a refreshing morning hike in nearby forests or parks. Explore Brussels' rich cultural heritage by visiting iconic landmarks like the Grand Place, Atomium, and Manneken Pis. Indulge in delectable Belgian cuisine, sampling famous chocolates, waffles, and local brews. End your days with cozy campfires, sharing stories and creating lasting memories under starry skies. A camping trip in Brussels promises a perfect blend of nature, culture, and adventure.", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday6 = new PackageHoliday("Concrete Jungle", PackageHolidayType.CITY_BREAK, 794.23, "Barcelona, Spain", "Experience the vibrant charm of Barcelona on an unforgettable city break! Immerse yourself in the architectural wonders of Gaudi, stroll along the lively Las Ramblas, and soak up the sun on the beautiful beaches. Indulge in delectable tapas, explore the Gothic Quarter, and marvel at the iconic Sagrada Familia. With its rich history, captivating art scene, and energetic atmosphere, Barcelona offers the perfect blend of culture, cuisine, and coastal beauty. Get ready for an enchanting adventure in this cosmopolitan gem of Catalonia!", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday7 = new PackageHoliday("Cruising 'round", PackageHolidayType.CRUISE, 1507.75, "Malé, Maldives", "Embark on a dreamy cruise around the Maldives! Sail across crystal-clear turquoise waters, discovering secluded islands and pristine coral reefs. Dive into a world of vibrant marine life, relax on white sandy beaches, and indulge in luxury amenities onboard. Experience breathtaking sunsets, snorkel in colorful lagoons, and pamper yourself with rejuvenating spa treatments. With its picture-perfect scenery and warm hospitality, a cruise in the Maldives promises an idyllic escape in paradise.", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday8 = new PackageHoliday("Yurt It Up", PackageHolidayType.CAMPING, 849.64, "Marrakech, Morocco", "Embark on an enchanting camping trip in Marrakech! Immerse yourself in the vibrant colors, exotic scents, and rich culture of this Moroccan gem. Set up camp in the serene outskirts, surrounded by desert landscapes and majestic Atlas Mountains. Explore Marrakech's bustling souks, visit the iconic Jardin Majorelle, and indulge in mouthwatering Moroccan cuisine. As the sun sets, gather around a crackling campfire, be captivated by traditional music and dance performances, and sleep under a blanket of stars. A camping trip in Marrakech offers a unique blend of adventure, cultural immersion, and natural beauty.", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday9 = new PackageHoliday("Udderly Great!", PackageHolidayType.COUNTRYSIDE, 386.17, "Edinburgh, Scotland", "Escape to the serene countryside surrounding Edinburgh for a peaceful farm retreat. Immerse yourself in the rustic charm of working farms, where you can reconnect with nature and experience the joys of rural life. Enjoy hands-on activities like feeding animals, milking cows, and gathering fresh eggs. Take leisurely walks through picturesque fields, breathing in the crisp country air. Indulge in farm-to-table meals, savoring locally sourced produce and homemade delicacies. Unwind in cozy farm cottages, surrounded by rolling hills and idyllic landscapes. A farm escape to Edinburgh offers a unique opportunity to rejuvenate, recharge, and immerse yourself in the tranquility of the countryside.", 5, AccommodationType.Hotel, flight14);
+        PackageHoliday packageHoliday10 = new PackageHoliday("Ski You Later!", PackageHolidayType.SKI, 2037.81, "Trysil, Norway", "Embark on an exhilarating ski trip to Trysil! Nestled in the stunning Norwegian countryside, Trysil offers a winter paradise for skiers of all levels. Hit the slopes on perfectly groomed trails, surrounded by breathtaking alpine scenery. Experience the thrill of carving through fresh powder and challenging yourself on varied terrain. After an adventurous day on the slopes, unwind in cozy mountain lodges, savoring traditional Norwegian cuisine and warming up by crackling fires. With its well-developed ski infrastructure and charming village atmosphere, Trysil guarantees an unforgettable ski adventure for all snow enthusiasts.", 5, AccommodationType.Hotel, flight14);
 
 
         //save all admins:
-        adminRepository.saveAll(Arrays.asList(
-                admin1, admin2, admin3, admin4, admin5
-        ));
+        adminRepository.saveAll(
+                Arrays.asList(admin1, admin2, admin3, admin4, admin5
+                ));
 
         //save as customers:
         customerRepository.saveAll(Arrays.asList(
                 customer1, customer2, customer3, customer4, customer5, customer6, customer7, customer8, customer9
         ));
 
-        //save all flights"
+        //save all flights
         flightRepository.saveAll(Arrays.asList(
                 flight1, flight2, flight3, flight4, flight5, flight6, flight7, flight8, flight9, flight10, flight11, flight12, flight13, flight14, flight15
         ));
 
-
-
+        //save all package holidays
+        packageHolidayRepository.saveAll(Arrays.asList(
+                packageHoliday1, packageHoliday2, packageHoliday3, packageHoliday4, packageHoliday5, packageHoliday6, packageHoliday7, packageHoliday8, packageHoliday9, packageHoliday10
+        ));
 
 
     }
