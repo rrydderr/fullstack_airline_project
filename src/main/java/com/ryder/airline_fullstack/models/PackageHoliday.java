@@ -53,14 +53,14 @@ public class PackageHoliday {
     public PackageHoliday() {
     }
 
-    public PackageHoliday(String packageName, Double price, String destination, String description, int duration, AccommodationType accommodationType, Flight fLights) {
+    public PackageHoliday(String packageName, Double price, String destination, String description, int duration, AccommodationType accommodationType, Flight flights) {
         this.packageName = packageName;
         this.price = price;
         this.destination = destination;
         this.description = description;
         this.duration = duration;
         this.accommodationType = accommodationType;
-        this.flights = fLights;
+        this.flights = flights;
 
     }
 

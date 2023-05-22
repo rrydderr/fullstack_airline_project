@@ -50,8 +50,27 @@ public class DataLoader implements ApplicationRunner {
     Customer customer8 = new Customer("Penelope Puff", "penelopepuff@gmail.com", "puffboatingschool123", "8767548", LocalDate.of(1958, 1, 12), "335-623-9055", "Mrs.Puffs House, Bikini Bottom");
 
     //Flights
+    Flight flight4 = new Flight("Lightning McSpeed", LocalDate.of(2023, 6, 7), LocalTime.of(12, 30), 299.99, 480, "Toronto, Canada", 78, 250, FlightStatus.UNKNOWN);
+    Flight flight5 = new Flight("Lightning McSpeed", LocalDate.of(2023, 5, 31), LocalTime.of(16, 30), 189.99, 63, "Barcelona, Spain", 11, 150, FlightStatus.UNKNOWN);
+    Flight flight15 = new Flight("Lightning McSpeed", LocalDate.of(2023, 5, 21), LocalTime.of(17, 45), 229.99, 190, "Antalya, Turkey", 5, 150, FlightStatus.CANCELLED);
+    Flight flight10 = new Flight("Lightning McSpeed", LocalDate.of(2023, 5, 22), LocalTime.of(4, 5), 99.99, 30, "Edinburgh, Scotland", 7, 100, FlightStatus.ARRIVED);
+    Flight flight9 = new Flight("Lightning McSpeed", LocalDate.of(2023, 6, 1), LocalTime.of(20, 0), 490.99, 102, "Geneva, Switzerland", 100, 250, FlightStatus.UNKNOWN);
+    Flight flight6 = new Flight("Global Air", LocalDate.of(2023, 5, 22), LocalTime.of(14, 30), 670.00, 480, "Toronto, Canada", 65, 300, FlightStatus.ON_TIME);
+    Flight flight7 = new Flight("Global Air", LocalDate.of(2023, 5, 30), LocalTime.of(6, 25), 990.00, 630, "Malé, Maldives", 43, 300, FlightStatus.UNKNOWN);
+    Flight flight8 = new Flight("Global Air", LocalDate.of(2023, 5, 22), LocalTime.of(4, 57), 389.99, 210, "Marrakech, Morocco", 2, 300, FlightStatus.DEPARTED);
+    Flight flight11 = new Flight("Global Air", LocalDate.of(2023, 5, 22), LocalTime.of(22, 15), 1050.00, 586, "British Colombia, Canada", 0, 250, FlightStatus.PLEASE_WAIT);
+    Flight flight12 = new Flight("Global Air", LocalDate.of(2023, 6, 2), LocalTime.of(2, 58), 77.87, 145, "Milan, Italy", 73, 250, FlightStatus.UNKNOWN);
+    Flight flight2 = new Flight("British Jets", LocalDate.of(2023, 5, 22), LocalTime.of(23, 5), 104.72, 147, "Milan, Italy", 23, 250, FlightStatus.DELAYED);
+    Flight flight1 = new Flight("British Jets", LocalDate.of(2023, 5, 24), LocalTime.of(15, 49), 198.49, 169, "Madrid, Spain", 0, 250, FlightStatus.CANCELLED);
+    Flight flight3 = new Flight("British Jets", LocalDate.of(2023, 5, 22), LocalTime.of(1, 37), 204.55, 172, "Brussels, Belgium", 0, 200, FlightStatus.BOARDING);
+    Flight flight13 = new Flight("British Jets", LocalDate.of(2023, 6, 30), LocalTime.of(0, 8), 202.82, 153, "Rome, Italy", 8, 200, FlightStatus.UNKNOWN);
+    Flight flight14 = new Flight("British Jets", LocalDate.of(2023, 6, 29), LocalTime.of(23, 27), 93.70, 138, "Marseille, France", 11, 200, FlightStatus.UNKNOWN);
 
-//    Flight flight = new Flight("Ryzair", LocalDate.of(2023, 6, 7), LocalTime.of(12, 30), 198.99, 190, "British Colombia, Canada", 23, 250, FlightStatus.UNKNOWN,);
+    //Package Holidays
+    PackageHoliday packageHoliday = new PackageHoliday("Cultural Climb", 200.00, "Rome, Italy", "The heart of Cultural Exploration... ", 5, AccommodationType.Hotel, flight13 );
+
+
+
 
 
 

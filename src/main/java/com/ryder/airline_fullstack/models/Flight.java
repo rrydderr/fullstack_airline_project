@@ -58,7 +58,7 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus, PackageHoliday packageHoliday) {
+    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
         this.airline = airline;
         this.dateOfFlight = dateOfFlight;
         this.timeOfFlight = timeOfFlight;
