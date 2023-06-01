@@ -46,10 +46,12 @@ public class Flight {
     private FlightStatus flightStatus;
 
     @ManyToMany(mappedBy = "flights")
-    private List<Customer>customers;
+    private List<Customer> customers;
 
-    @ManyToMany(mappedBy = "flights")
-    private List<Admin>admins;
+    @ManyToOne
+    @JoinColumn(name = "admin_id", nullable = false)
+    @JsonIgnoreProperties("flights")
+    private Admin admin;
 
     @OneToMany(mappedBy = "flights", orphanRemoval = true)
     @JsonIgnoreProperties("flights")
@@ -159,13 +161,6 @@ public class Flight {
         this.customers = customers;
     }
 
-    public List<Admin> getAdmins() {
-        return admins;
-    }
-
-    public void setAdmins(List<Admin> admins) {
-        this.admins = admins;
-    }
 
     public List<PackageHoliday> getPackageHoliday() {
         return packageHolidays;
@@ -175,15 +170,25 @@ public class Flight {
         this.packageHolidays = packageHoliday;
     }
 
-    //Add Admin to flight
-    public void addAdminById(Long adminId) {
-        Admin admin = new Admin();
-        admin.setId(adminId);
-        admins.add(admin);
+    public Admin getAdmin() {
+        return admin;
     }
 
-    //Remove Admin from Flight
-    public void removeAdminById(Long adminId) {
-        admins.removeIf(admin -> admin.getId().equals(adminId));
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
+
 }
+
+//    //Add Admin to flight
+//    public void addAdminById(Long adminId) {
+//        Admin admin = new Admin();
+//        admin.setId(adminId);
+//        admins.add(admin);
+//    }
+//
+//    //Remove Admin from Flight
+//    public void removeAdminById(Long adminId) {
+//        admins.removeIf(admin -> admin.getId().equals(adminId));
+//    }
+//}

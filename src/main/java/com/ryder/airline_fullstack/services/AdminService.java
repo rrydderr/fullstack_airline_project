@@ -48,30 +48,7 @@ public class AdminService {
     //this retrieves an admin object based on id - if the object exists then it will call the save method
     //(taken from admin repository), otherwise it will return null if no object is found
 
-    public void addFlightToAdmin(Long adminId, Long flightId) {
-        Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new EntityNotFoundException("Admin not found with id: " + adminId));
-        Flight flight = flightRepository.findById(flightId).orElseThrow(() -> new EntityNotFoundException("Flight not found with id: " + flightId));
-
-        admin.getFlights().add(flight);
-        flight.getAdmins().add(admin);
-
-        adminRepository.save(admin);
-        flightRepository.save(flight);
-    }
-
-    public void removeFlightFromAdmin(Long adminId, Long flightId) {
-        Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new EntityNotFoundException("Admin not found with id: " + adminId));
-        Flight flight = flightRepository.findById(flightId).orElseThrow(() -> new EntityNotFoundException("Flight not found with id: " + flightId));
-
-        admin.getFlights().remove(flight);
-        flight.getAdmins().remove(admin);
-
-        adminRepository.save(admin);
-        flightRepository.save(flight);
-    }
-
-
 }
 
-//since the admin an only update their account, this is all that is required in this service
+//since the admin an only update their account and add, update and remove flights this is all that is required in this service
 

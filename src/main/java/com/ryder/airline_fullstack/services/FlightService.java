@@ -50,25 +50,4 @@ public class FlightService {
         flightRepository.deleteById(id);
     }
 
-    public void addAdminToFlight(Long flightId, Long adminId) {
-        Flight flight = flightRepository.findById(flightId).orElseThrow(() -> new EntityNotFoundException("Flight not found with id: " + flightId));
-        Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new EntityNotFoundException("Admin not found with id: " + adminId));
-
-        flight.getAdmins().add(admin);
-        admin.getFlights().add(flight);
-
-        flightRepository.save(flight);
-        adminRepository.save(admin);
-    }
-
-    public void removeAdminFromFlight(Long flightId, Long adminId) {
-        Flight flight = flightRepository.findById(flightId).orElseThrow(() -> new EntityNotFoundException("Flight not found with id: " + flightId));
-        Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new EntityNotFoundException("Admin not found with id: " + adminId));
-
-        flight.getAdmins().remove(admin);
-        admin.getFlights().remove(flight);
-
-        flightRepository.save(flight);
-        adminRepository.save(admin);
-    }
 }

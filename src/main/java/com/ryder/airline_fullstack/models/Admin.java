@@ -1,5 +1,6 @@
 package com.ryder.airline_fullstack.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -26,10 +27,8 @@ public class Admin {
     @Column
     private String adminPin;
 
-    @ManyToMany
-    @JoinTable(name="admins_flights",
-    joinColumns = @JoinColumn(name="admin_id"),
-    inverseJoinColumns = @JoinColumn(name = "flight_id"))
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("admin")
     private List<Flight>flights;
 
     @ManyToMany
