@@ -102,5 +102,4 @@ public class Admin {
         this.packageHolidays = packageHolidays;
     }
 
-
 }
