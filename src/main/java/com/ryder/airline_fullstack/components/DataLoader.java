@@ -78,6 +78,15 @@ public class DataLoader implements ApplicationRunner {
         PackageHoliday packageHoliday10 = new PackageHoliday("Ski You Later!", PackageHolidayType.SKI, 2037.81, "Trysil, Norway", "Embark on an exhilarating ski trip to Trysil! Nestled in the stunning Norwegian countryside, Trysil offers a winter paradise for skiers of all levels.", 5, AccommodationType.Hotel, flight14);
 
 
+//        //Associate Admins with flights:
+//        admin1.getFlights().addAll(Arrays.asList(flight1, flight2));
+//        admin2.getFlights().addAll(Arrays.asList(flight1));
+//
+//        //Associate Flights with admins:
+//        flight1.getAdmins().addAll(Arrays.asList(admin1, admin2));
+//        flight2.getAdmins().addAll(Arrays.asList(admin1));
+
+
         //save all admins:
         adminRepository.saveAll(
                 Arrays.asList(admin1, admin2, admin3, admin4, admin5

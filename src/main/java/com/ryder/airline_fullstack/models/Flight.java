@@ -174,4 +174,16 @@ public class Flight {
     public void setPackageHoliday(List<PackageHoliday> packageHoliday) {
         this.packageHolidays = packageHoliday;
     }
+
+    //Add Admin to flight
+    public void addAdminById(Long adminId) {
+        Admin admin = new Admin();
+        admin.setId(adminId);
+        admins.add(admin);
+    }
+
+    //Remove Admin from Flight
+    public void removeAdminById(Long adminId) {
+        admins.removeIf(admin -> admin.getId().equals(adminId));
+    }
 }

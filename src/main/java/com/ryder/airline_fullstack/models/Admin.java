@@ -2,6 +2,7 @@ package com.ryder.airline_fullstack.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -93,4 +94,25 @@ public class Admin {
     public void setFlights(List<Flight> flights) {
         this.flights = flights;
     }
+
+    public List<PackageHoliday> getPackageHolidays() {
+        return packageHolidays;
+    }
+
+    public void setPackageHolidays(List<PackageHoliday> packageHolidays) {
+        this.packageHolidays = packageHolidays;
+    }
+
+    //Add flight to Admin
+    public void addFlightById(Long flightId) {
+        Flight flight = new Flight();
+        flight.setId(flightId);
+        flights.add(flight);
+    }
+
+    //Remove flight from Admin
+    public void removeFlightById(Long flightId) {
+        flights.removeIf(flight -> flight.getId().equals(flightId));
+    }
+
 }
