@@ -60,7 +60,7 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus) {
+    public Flight(String airline, LocalDate dateOfFlight, LocalTime timeOfFlight, Double price, int flightDuration, String destination, int availableSeats, int totalSeats, FlightStatus flightStatus, Admin admin) {
         this.airline = airline;
         this.dateOfFlight = dateOfFlight;
         this.timeOfFlight = timeOfFlight;
@@ -70,6 +70,7 @@ public class Flight {
         this.availableSeats = availableSeats;
         this.totalSeats = totalSeats;
         this.flightStatus = flightStatus;
+        this.admin = admin;
     }
 
 
@@ -179,16 +180,3 @@ public class Flight {
     }
 
 }
-
-//    //Add Admin to flight
-//    public void addAdminById(Long adminId) {
-//        Admin admin = new Admin();
-//        admin.setId(adminId);
-//        admins.add(admin);
-//    }
-//
-//    //Remove Admin from Flight
-//    public void removeAdminById(Long adminId) {
-//        admins.removeIf(admin -> admin.getId().equals(adminId));
-//    }
-//}

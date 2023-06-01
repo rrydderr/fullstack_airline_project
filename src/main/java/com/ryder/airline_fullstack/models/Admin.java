@@ -102,16 +102,5 @@ public class Admin {
         this.packageHolidays = packageHolidays;
     }
 
-    //Add flight to Admin
-    public void addFlightById(Long flightId) {
-        Flight flight = new Flight();
-        flight.setId(flightId);
-        flights.add(flight);
-    }
-
-    //Remove flight from Admin
-    public void removeFlightById(Long flightId) {
-        flights.removeIf(flight -> flight.getId().equals(flightId));
-    }
 
 }
