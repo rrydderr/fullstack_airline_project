@@ -47,13 +47,12 @@ public class PackageHoliday {
     @ManyToMany (mappedBy = "packageHolidays")
     private List<Customer>customers;
 
-    @ManyToMany (mappedBy = "packageHolidays")
-    private List<Admin>admins;
+    @ManyToOne
+    @JoinColumn(name = "admin_id", nullable = false)
+    @JsonIgnoreProperties("packageHolidays")
+    private Admin admin;
 
-    public PackageHoliday() {
-    }
-
-    public PackageHoliday(String packageName, PackageHolidayType packageHolidayType, Double price, String destination, String description, int duration, AccommodationType accommodationType, Flight flights) {
+    public PackageHoliday(String packageName, PackageHolidayType packageHolidayType, Double price, String destination, String description, int duration, AccommodationType accommodationType, Flight flights, Admin admin) {
         this.packageName = packageName;
         this.packageHolidayType = packageHolidayType;
         this.price = price;
@@ -62,6 +61,7 @@ public class PackageHoliday {
         this.duration = duration;
         this.accommodationType = accommodationType;
         this.flights = flights;
+        this.admin = admin;
 
     }
 
@@ -137,12 +137,12 @@ public class PackageHoliday {
         this.customers = customers;
     }
 
-    public List<Admin> getAdmins() {
-        return admins;
+    public Admin getAdmin() {
+        return admin;
     }
 
-    public void setAdmins(List<Admin> admins) {
-        this.admins = admins;
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 
     public Flight getFlights() {

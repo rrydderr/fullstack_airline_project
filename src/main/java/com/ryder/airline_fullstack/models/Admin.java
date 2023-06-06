@@ -31,10 +31,8 @@ public class Admin {
     @JsonIgnoreProperties("admin")
     private List<Flight>flights;
 
-    @ManyToMany
-    @JoinTable(name = "admins_package_holidays",
-    joinColumns = @JoinColumn(name="admin_id"),
-    inverseJoinColumns = @JoinColumn(name = "package_holiday_id"))
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("admin")
     private List<PackageHoliday> packageHolidays;
 
     public Admin() {
